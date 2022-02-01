@@ -26,6 +26,8 @@ export class AppComponent implements OnInit, OnDestroy {
   repayment_amount: number = 0;
   repayment_date!:any
 
+  mobileNav = false;
+
   slider1 = true;
   slider2 = false;
 
@@ -77,6 +79,10 @@ export class AppComponent implements OnInit, OnDestroy {
   initiateSlider():any{
     this.slider1 = !this.slider1;
     this.slider2 = !this.slider2;
+  }
+
+  toggleMobileNav(){
+    this.mobileNav = !this.mobileNav;
   }
 
 }
