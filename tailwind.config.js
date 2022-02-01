@@ -499,6 +499,8 @@ module.exports = {
       0: '0px',
       full: '100%',
       screen: '100vh',
+      '700px' : '43.75rem',
+      '350px' : '25.875rem'
     },
     minWidth: {
       0: '0px',

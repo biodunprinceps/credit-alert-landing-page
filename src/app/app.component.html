@@ -1,7 +1,7 @@
-<div class="mx-auto" style="font-family: 'Outfit', sans-serif !important; ">
+<div class="mx-auto container" style="font-family: 'Outfit', sans-serif !important; ">
   <!-- header  -->
-  <div style="background-color: #FEF6ED; min-height: 700px; ">
-    <div class="w-full relative px-20 pt-12 max-w-screen-2xl mx-auto" >
+  <div class="md:min-h-700px min-h-350px mb-20 md:mb-0" style="background-color: #FEF6ED;">
+    <div class="w-full relative md:px-20 md:pt-12 px-5 pt-12 max-w-screen-2xl mx-auto" >
       <div class="absolute bottom-10 left-2 -z-1">
         <img src="../../../assets/bg.png" alt="">
       </div>
@@ -10,7 +10,7 @@
       </svg>
 
       <!-- navbar  -->
-      <nav class="flex justify-between px-10 relative z-20 items-center">
+      <nav class="hidden md:flex justify-between px-10 relative z-20 items-center">
         <!-- logo  -->
         <div>
           <img src="../../../assets/mainlogo.png" alt="">
@@ -19,19 +19,19 @@
         <!-- navbar  -->
         <ul class="flex space-x-10">
           <li><a style="color: #636061;" class="text-lg font-normal" href="#howitworks">How It Works</a></li>
-          <li><a class="text-princeps text-lg font-semibold" href="https://apply.creditalert.africa/login">Log In</a></li>
+          <li><a class="text-princeps text-lg font-semibold" href="https://accounts.creditalert.africa">Log In</a></li>
           <li><a href="https://apply.creditalert.africa" class="bg-princeps px-10 py-2 rounded-lg text-white text-lg">Apply</a></li>
         </ul>
       </nav>
 
       <!-- hero  -->
-      <div class="flex px-20 pt-32 items-center">
+      <div class="md:flex md:px-20 md:pt-32 items-center">
         <!-- left  -->
-        <div class="w-1/2">
-          <h2 class="text-lg font-normal" style="color: #201B1B87;">YOU ARE A CLICK AWAY TO YOUR NEXT LOAN</h2>
-          <h1 class="w-2/3 font-semibold" style="font-size: 4rem; line-height: 4.375rem; color: #636061;">Get up to</h1>
-          <h2 class="text-princeps font-semibold" style="font-size: 4rem; line-height: 4.375rem;">{{ 700000 | currency:'₦':  'symbol' : '1.0-0'  }} <br>in 25 minutes </h2>
-          <div class="mt-5 flex space-x-5">
+        <div class="md:w-1/2">
+          <h2 class="md:text-lg hidden md:block text-sm font-normal" style="color: #201B1B87;">YOU ARE A CLICK AWAY TO YOUR NEXT LOAN</h2>
+          <h1 class="md:w-2/3 font-semibold md:text-6xl text-3xl text-center md:text-left" style="color: #636061;">Get up to</h1>
+          <h2 class="text-princeps font-semibold md:text-6xl text-3xl text-center md:text-left">{{ 700000 | currency:'₦':  'symbol' : '1.0-0'  }} <br>in 25 minutes </h2>
+          <div class="mt-5 flex justify-center md:justify-start space-x-5 mb-5 md:mb-0">
             <a href="#">
               <svg id="Group_277" data-name="Group 277" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="50" viewBox="0 0 248.172 81.18">
                 <defs>
@@ -149,9 +149,9 @@
         </div>
 
         <!-- right  -->
-        <div class="w-1/2">
+        <div class="md:w-1/2 hidden md:block">
           <!-- top  -->
-          <div class="flex justify-around items-center">
+          <div class="md:flex justify-around items-center">
             <!-- left box  -->
             <div class="w-36 bg-white rounded-md ml-5 flex items-center px-5 space-x-1" style="height: 3.1875rem;box-shadow: 0px 7.40299px 12.9552px rgba(185, 89, 0, 0.15);">
               <div class="h-8 w-8 rounded-circle flex items-center justify-center p-2" style="background-color: #FFF1F1;">
@@ -231,7 +231,7 @@
   <!-- section 1 -->
   <div class="h-full w-full bg-white">
     <!-- range amount -->
-    <div class="mx-auto flex items-center gap-10 bg-white shadow-md relative bottom-24 rounded-xl px-12 py-20" style="height: 12.625rem;box-shadow: 0px 7.40299px 12.9552px rgba(185, 89, 0, 0.15); width: 58.5625rem;">
+    <div class="mx-auto hidden md:flex items-center gap-10 bg-white shadow-md relative bottom-24 rounded-xl px-12 py-20" style="height: 12.625rem;box-shadow: 0px 7.40299px 12.9552px rgba(185, 89, 0, 0.15); width: 58.5625rem;">
 
       <div class="w-12 h-12 rounded-circle flex items-center justify-center shadow-lg" style="background-color:#EAF2FF;">
         <svg width="26" height="17" viewBox="0 0 26 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -259,6 +259,47 @@
             <div class="opacity-60 text-xs">REPAYMENT DATE</div>
             <div>{{ repayment_date }}</div>
         </div>
+
+
+    </div>
+
+    <!-- mobile view range amount -->
+    <div class="mx-auto md:hidden items-center gap-x-1 bg-white shadow-md relative bottom-36 rounded-xl px-2 " style="height: 8.625rem;box-shadow: 0px 7.40299px 12.9552px rgba(185, 89, 0, 0.15); width: 20rem;">
+
+
+
+      <div class="flex-1">
+        <div class=" text-princeps text-center text-3xl font-semibold">
+          {{ loan_amount | currency:'₦'}}
+        </div>
+        <div>
+          <ngx-slider (userChange)="reCalcRepayment($event)" [(value)]="loan_amount" [options]="options"></ngx-slider>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-x-5">
+        <div class="w-6 h-6 rounded-circle flex items-center shadow-md" style="background-color:#EAF2FF;">
+          <svg width="26" height="17" viewBox="0 0 26 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 0C6.539 0 0 2.02169 0 5.88462V11.1154C0 14.9783 6.539 17 13 17C19.461 17 26 14.9783 26 11.1154V5.88462C26 2.02169 19.461 0 13 0ZM2.6 11.1154V9.55008C3.3488 9.98815 4.2263 10.3648 5.2 10.6747V13.1345C3.4944 12.4623 2.6 11.662 2.6 11.1154ZM18.2 11.3089V13.8864C17.0729 14.1205 15.7729 14.2918 14.3 14.3545V11.7392C15.6364 11.6842 16.9533 11.5378 18.2 11.3089ZM11.7 14.3558C10.2271 14.2931 8.9271 14.1218 7.8 13.8877V11.3102C9.0467 11.5378 10.3636 11.6855 11.7 11.7418V14.3558ZM20.8 13.1345V10.6747C21.7737 10.3648 22.6512 9.98946 23.4 9.55008V11.1154C23.4 11.662 22.5069 12.4623 20.8 13.1345ZM13 9.15385C6.2699 9.15385 2.6 6.99485 2.6 5.88462C2.6 4.77438 6.2699 2.61538 13 2.61538C19.7301 2.61538 23.4 4.77438 23.4 5.88462C23.4 6.99485 19.7301 9.15385 13 9.15385Z" fill="#2076FF"/>
+            </svg>
+
+        </div>
+
+
+        <div class="flex gap-x-5">
+          <div class="space-y-1">
+            <div class="opacity-60 text-xxs">REPAYMENT</div>
+            <div class="text-xxs">{{ repayment_amount | currency:'₦'}}</div>
+          </div>
+          <div class="space-y-1">
+              <div class="opacity-60 text-xxs">REPAYMENT DATE</div>
+              <div class="text-xxs">{{ repayment_date }}</div>
+          </div>
+        </div>
+      </div>
+
+
+
 
 
     </div>
@@ -311,14 +352,24 @@
     </div> -->
 
     <!-- how it works  video -->
-    <div id="howitworks" class="px-40 mt-40">
+    <div id="howitworks" class="md:px-40 md:mt-40 text-center md:text-left">
       <!-- title  -->
-      <div class="text-center text-5xl text-princeps font-semibold mr-16 mb-5">How it works</div>
+      <div class="text-center md:text-5xl text-3xl text-princeps font-semibold md:mr-16 mb-5">How it works</div>
       <!-- body  -->
-      <div class="text-center mr-16 text-2xl opacity-50" style="color: #201B1B;">Tap on the play button to watch how to get your Credit Alert Loan</div>
+      <div class="text-center md:mr-16 md:text-2xl opacity-50" style="color: #201B1B;">Tap on the play button to watch how to get your Credit Alert Loan</div>
 
       <!-- video  -->
-      <div class="rounded-xl mx-auto my-10" style="height: 28.5625rem; width: 58.5625rem; background-color: #FEF6ED;">
+      <div class="rounded-xl hidden md:block mx-auto my-10" style="height: 28.5625rem; width: 58.5625rem; background-color: #FEF6ED;">
+        <!-- <iframe width="100%" height="100%"
+        src="https://www.youtube.com/watch?v=8G37Iaw8mMQ">
+        </iframe> -->
+
+
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8G37Iaw8mMQ" title="How to?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <!-- video mobile  -->
+      <div class="rounded-xl md:hidden mx-auto my-10 px-5 bg-white" style="">
         <!-- <iframe width="100%" height="100%"
         src="https://www.youtube.com/watch?v=8G37Iaw8mMQ">
         </iframe> -->
@@ -338,15 +389,16 @@
   </div>
 
   <!-- section 2  -->
-  <div class="w-full flex justify-center mb-48 space-x-12" style="height: 26rem; background-color: #FEF6ED;">
-    <div class="-mt-24 ml-32">
-      <img src="../../../assets/iPhone.png" alt="">
+  <div class="w-full md:flex justify-center mb-48 md:space-x-12" style="background-color: #FEF6ED;">
+    <div class="-mt-24 md:ml-32">
+      <img src="../../../assets/iPhone.png" class="md:block hidden" alt="">
+      <img src="../../../assets/iPhone.png" class="w-48 md:hidden mx-auto" alt="">
     </div>
 
-    <div class="p-20">
-      <div class="text-lg font-light opacity-50" style="line-height: 1.4375rem;">CREDIT ALERT MOBILE APP</div>
-      <div class="w-2/3 font-semibold" style="font-size: 4rem; color: #636061; line-height: 4.375rem;">you are a Click away to</div>
-      <div class="mt-5 flex space-x-5">
+    <div class="md:p-20 text-center md:text-left">
+      <div class="md:text-lg text-md font-light opacity-50" style="line-height: 1.4375rem;">CREDIT ALERT MOBILE APP</div>
+      <div class="md:w-2/3 font-semibold md:text-6xl text-2xl" style="color: #636061;">you are a Click away to</div>
+      <div class="mt-5 flex justify-center md:justify-start space-x-5">
         <a href="#">
           <svg id="Group_277" data-name="Group 277" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="50" viewBox="0 0 248.172 81.18">
             <defs>
@@ -466,19 +518,25 @@
 
   </div>
 
-  <footer class="mt-12">
+  <footer class="md:mt-12 mt-8">
     <!-- top  -->
-    <div class="w-full h-12 flex px-5 py-10 justify-center items-center space-x-10" style="background-color:#FEF6ED;">
-      <div class="opacity-30" style="font-size: 1.875rem;">Need help? Speak with us</div>
+    <div class="w-full h-12 flex px-5 py-10 justify-center items-center md:space-x-10 space-x-5" style="background-color:#FEF6ED;">
+      <div class="opacity-30 md:text-3xl">Need help? Speak with us</div>
       <div>
-        <a class="bg-princeps px-10 py-2 flex items-center justify-between space-x-3 text-white rounded-xl" href="tel:07085698828"> <svg width="21" height="20" class="inline-flex" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="bg-princeps md:px-10 md:py-2 px-3 py-1 flex items-center justify-between md:space-x-3 text-white rounded-xl" href="tel:07085698828"> <svg width="21" height="20" class="hidden md:inline-flex" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M18.5876 8.36517V7.74953C18.5876 3.48198 14.9586 0 10.5109 0C6.06317 0 2.43417 3.48198 2.43417 7.74953V8.36517C1.01797 8.87476 0 10.1911 0 11.7198C0 13.6942 1.68169 15.3079 3.73968 15.3079H5.08949C5.44358 15.3079 5.73113 15.0319 5.73113 14.6923V8.74745C5.73113 8.40771 5.44341 8.13181 5.08949 8.13181H4.46991V7.74972C4.46991 4.54379 7.16953 1.9535 10.5109 1.9535C13.8522 1.9535 16.5518 4.54375 16.5518 7.74972V8.13181H15.9322C15.5782 8.13181 15.2906 8.40787 15.2906 8.74745V14.6923C15.2906 15.032 15.5783 15.3079 15.9322 15.3079H16.2199C15.5783 16.7304 14.1621 17.7283 12.4803 17.8557C12.3918 17.4522 12.0155 17.1339 11.5509 17.1339H9.44876C8.91765 17.1339 8.49734 17.5373 8.49734 18.0467V19.0871C8.49734 19.5967 8.91781 20 9.44876 20H11.5509C12.0157 20 12.4139 19.6816 12.4803 19.2357C14.9808 19.1083 17.0608 17.4734 17.7689 15.2654C19.5835 15.0318 20.9996 13.5243 20.9996 11.7197C21.0217 10.17 20.0038 8.87484 18.5876 8.36521L18.5876 8.36517Z" fill="white"/>
-          </svg> <div class="text-2xl font-semibold">Support</div> </a>
+        </svg>
+
+        <svg width="15" height="15" class="inline-flex md:hidden" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.5876 8.36517V7.74953C18.5876 3.48198 14.9586 0 10.5109 0C6.06317 0 2.43417 3.48198 2.43417 7.74953V8.36517C1.01797 8.87476 0 10.1911 0 11.7198C0 13.6942 1.68169 15.3079 3.73968 15.3079H5.08949C5.44358 15.3079 5.73113 15.0319 5.73113 14.6923V8.74745C5.73113 8.40771 5.44341 8.13181 5.08949 8.13181H4.46991V7.74972C4.46991 4.54379 7.16953 1.9535 10.5109 1.9535C13.8522 1.9535 16.5518 4.54375 16.5518 7.74972V8.13181H15.9322C15.5782 8.13181 15.2906 8.40787 15.2906 8.74745V14.6923C15.2906 15.032 15.5783 15.3079 15.9322 15.3079H16.2199C15.5783 16.7304 14.1621 17.7283 12.4803 17.8557C12.3918 17.4522 12.0155 17.1339 11.5509 17.1339H9.44876C8.91765 17.1339 8.49734 17.5373 8.49734 18.0467V19.0871C8.49734 19.5967 8.91781 20 9.44876 20H11.5509C12.0157 20 12.4139 19.6816 12.4803 19.2357C14.9808 19.1083 17.0608 17.4734 17.7689 15.2654C19.5835 15.0318 20.9996 13.5243 20.9996 11.7197C21.0217 10.17 20.0038 8.87484 18.5876 8.36521L18.5876 8.36517Z" fill="white"/>
+        </svg>
+
+          <div class="md:text-2xl text-xs font-semibold">Support</div> </a>
       </div>
     </div>
 
     <!-- main-footer  -->
-    <div class="w-full bg-princeps py-20 text-white flex justify-center items-center space-x-40" style="height: 19.3125rem;">
+    <div class="w-full bg-princeps md:py-20 py-10 px-5 md:px-0 text-white md:flex justify-center items-center md:space-x-40 md:h-72">
       <!-- left  -->
       <div class="flex flex-col space-y-5">
         <div>
