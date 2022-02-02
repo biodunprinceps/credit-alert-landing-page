@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ChangeContext, Options } from '@angular-slider/ngx-slider';
 import { trigger, transition, style, animate } from "@angular/animations";
 
@@ -17,7 +17,7 @@ import { trigger, transition, style, animate } from "@angular/animations";
   //      animate('600ms ease-out', style({transform:'translateX(100%)', opacity:1}))
   //  ])
    ])
-  ]
+  ],
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'Credit Alert';
@@ -37,6 +37,7 @@ export class AppComponent implements OnInit, OnDestroy {
     step: 1000
   };
   interval: any;
+  constructor(private _eref: ElementRef) { }
 
   ngOnInit(): void {
     this.getOfferData()
@@ -84,5 +85,12 @@ export class AppComponent implements OnInit, OnDestroy {
   toggleMobileNav(){
     this.mobileNav = !this.mobileNav;
   }
+
+  // onClick(event:any){
+  //   if (!this._eref.nativeElement.contains(event.target)) {
+  //     this.mobileNav = false;
+  //   }
+
+  // }
 
 }

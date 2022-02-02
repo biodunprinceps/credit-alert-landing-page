@@ -1,6 +1,6 @@
-<div class="mx-auto" style="font-family: 'Outfit', sans-serif !important;">
+<div id="main" class="mx-auto">
   <!-- header  -->
-  <div class="md:min-h-700px min-h-350px mb-20 md:mb-0" style="background-color: #FEF6ED;">
+  <div id="header" class="md:min-h-700px min-h-350px mb-20 md:mb-0">
     <div class="w-full relative md:px-20 md:pt-12 px-5 pt-12 max-w-screen-2xl mx-auto" >
       <div class="absolute bottom-10 left-2 -z-1">
         <img src="../../../assets/bg.png" alt="">
@@ -10,26 +10,31 @@
       </svg>
 
       <!-- navbar  -->
-      <nav class="flex justify-between md:px-10 relative z-20 items-center">
+      <nav class="flex justify-between md:px-10 relative z-20 items-center"
+      >
         <!-- logo  -->
         <div class="hidden md:block">
           <img src="../../../assets/mainlogo.png" alt="">
         </div>
-        <!-- logo  -->
-        <div class="md:hidden mb-10">
+
+        <!-- mobile logo  -->
+        <div class="md:hidden mb-10" [class.fixed] = "mobileNav == true">
           <img src="../../../assets/mainlogo.png" class="w-32" alt="">
         </div>
 
         <!-- hambuger  -->
-        <div class="md:hidden mb-10">
+        <div  class="md:hidden mb-10 right-5" [class.fixed] = "mobileNav == true" >
           <button type="button" (click)="toggleMobileNav()">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg *ngIf="!mobileNav" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg *ngIf="mobileNav" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
             <!-- navbar mobile  -->
-          <ul class="md:hidden space-y-5 p-5 mt-5 fixed left-0 right-0 min-h-screen bg-white transform translate-x-full transition-all duration-200" [class.translate-x-0] = "mobileNav == true">
-            <li><a style="color: #636061;" class="text-lg font-normal" (click)="toggleMobileNav()" href="#howitworks">How It Works</a></li>
+          <ul class="md:hidden space-y-5 p-5 mt-5 fixed  left-0 right-0 min-h-screen bg-white transform translate-x-full transition-all duration-200" [class.translate-x-0] = "mobileNav == true">
+            <li><a style="color: #636061;" class="text-lg font-normal" href="#howitworks">How It Works</a></li>
             <li><a class="text-princeps text-lg font-semibold" href="https://accounts.creditalert.africa">Log In</a></li>
             <li><a href="https://apply.creditalert.africa" class="bg-princeps px-10 py-2 rounded-lg text-white text-lg">Apply</a></li>
           </ul>
@@ -48,12 +53,12 @@
       <div class="md:flex md:px-20 md:pt-32 items-center">
         <!-- left  -->
         <div class="md:w-1/2">
-          <h2 class="md:text-lg hidden md:block text-sm font-normal" style="color: #201B1B87;">YOU ARE A CLICK AWAY TO YOUR NEXT LOAN</h2>
-          <h1 class="md:w-2/3 font-semibold md:text-6xl text-3xl text-center md:text-left" style="color: #636061;">Get up to</h1>
+          <h2 id="heroBigText" class="md:text-lg hidden md:block text-sm font-normal">YOU ARE A CLICK AWAY TO YOUR NEXT LOAN</h2>
+          <h1 id="heroMiddleText" class="md:w-2/3 font-semibold md:text-6xl text-3xl text-center md:text-left">Get up to</h1>
           <h2 class="text-princeps font-semibold md:text-6xl text-3xl text-center md:text-left">{{ 700000 | currency:'₦':  'symbol' : '1.0-0'  }} <br>in 25 minutes </h2>
-          <div class="mt-5 flex justify-center md:justify-start space-x-5 mb-5 md:mb-0">
-            <a href="#">
-              <svg id="Group_277" data-name="Group 277" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="50" viewBox="0 0 248.172 81.18">
+          <div class="md:mt-5 flex justify-center md:justify-start space-x-5 mb-5 md:mb-0">
+            <a href="#" class="">
+              <svg id="Group_277" class="w-20 md:w-40" data-name="Group 277" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="50" viewBox="0 0 248.172 81.18">
                 <defs>
                   <clipPath id="clip-path">
                     <path id="Path_1304" data-name="Path 1304" d="M170.173,349.3l-11.19-6.461L137.4,330.373c-1.2-.692-2.392-.273-2.392,1.173v50.777c0,1.084.853,1.551,1.895.951l22.082-12.751,11.19-6.46,10.756-6.209c1.262-.729,1.141-1.729.076-2.3S170.173,349.3,170.173,349.3Z" transform="translate(-135.006 -330.047)" fill="none"/>
@@ -124,8 +129,8 @@
               </svg>
             </a>
 
-            <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 248.175 81.18">
+            <a href="#" class="">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-20 md:w-40" width="150" height="50" viewBox="0 0 248.175 81.18">
                 <g id="Group_271" data-name="Group 271" transform="translate(0 0)">
                   <path id="Path_1275" data-name="Path 1275" d="M344.816,1006.034a10.97,10.97,0,0,1-10.968,10.971H107.612a10.972,10.972,0,0,1-10.971-10.971V946.8a10.972,10.972,0,0,1,10.971-10.97H333.848a10.97,10.97,0,0,1,10.968,10.97Z" transform="translate(-96.641 -935.825)"/>
                   <g id="Group_267" data-name="Group 267" transform="translate(16.648 12.62)">
@@ -164,7 +169,6 @@
                 </g>
               </svg>
             </a>
-
           </div>
         </div>
 
@@ -252,7 +256,6 @@
   <div class="h-full w-full bg-white">
     <!-- range amount -->
     <div class="mx-auto hidden md:flex items-center gap-10 bg-white shadow-md relative bottom-24 rounded-xl px-12 py-20" style="height: 12.625rem;box-shadow: 0px 7.40299px 12.9552px rgba(185, 89, 0, 0.15); width: 58.5625rem;">
-
       <div class="w-12 h-12 rounded-circle flex items-center justify-center shadow-lg" style="background-color:#EAF2FF;">
         <svg width="26" height="17" viewBox="0 0 26 17" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13 0C6.539 0 0 2.02169 0 5.88462V11.1154C0 14.9783 6.539 17 13 17C19.461 17 26 14.9783 26 11.1154V5.88462C26 2.02169 19.461 0 13 0ZM2.6 11.1154V9.55008C3.3488 9.98815 4.2263 10.3648 5.2 10.6747V13.1345C3.4944 12.4623 2.6 11.662 2.6 11.1154ZM18.2 11.3089V13.8864C17.0729 14.1205 15.7729 14.2918 14.3 14.3545V11.7392C15.6364 11.6842 16.9533 11.5378 18.2 11.3089ZM11.7 14.3558C10.2271 14.2931 8.9271 14.1218 7.8 13.8877V11.3102C9.0467 11.5378 10.3636 11.6855 11.7 11.7418V14.3558ZM20.8 13.1345V10.6747C21.7737 10.3648 22.6512 9.98946 23.4 9.55008V11.1154C23.4 11.662 22.5069 12.4623 20.8 13.1345ZM13 9.15385C6.2699 9.15385 2.6 6.99485 2.6 5.88462C2.6 4.77438 6.2699 2.61538 13 2.61538C19.7301 2.61538 23.4 4.77438 23.4 5.88462C23.4 6.99485 19.7301 9.15385 13 9.15385Z" fill="#2076FF"/>
@@ -269,25 +272,20 @@
         </div>
       </div>
 
-
-
-        <div class="space-y-1 w-24">
-          <div class="opacity-60 text-xs">REPAYMENT</div>
-          <div>{{ repayment_amount | currency:'₦'}}</div>
-        </div>
-        <div class="space-y-1">
-            <div class="opacity-60 text-xs">REPAYMENT DATE</div>
-            <div>{{ repayment_date }}</div>
-        </div>
+      <div class="space-y-1 w-24">
+        <div class="opacity-60 text-xs">REPAYMENT</div>
+        <div>{{ repayment_amount | currency:'₦'}}</div>
+      </div>
+      <div class="space-y-1">
+          <div class="opacity-60 text-xs">REPAYMENT DATE</div>
+          <div>{{ repayment_date }}</div>
+      </div>
 
 
     </div>
 
     <!-- mobile view range amount -->
     <div class="mx-auto md:hidden items-center gap-x-1 bg-white shadow-md relative bottom-36 rounded-xl px-2 " style="height: 8.625rem;box-shadow: 0px 7.40299px 12.9552px rgba(185, 89, 0, 0.15); width: 20rem;">
-
-
-
       <div class="flex-1 pt-3">
         <div class=" text-princeps text-center text-3xl font-semibold">
           {{ loan_amount | currency:'₦'}}
@@ -318,109 +316,56 @@
         </div>
       </div>
 
-
-
-
-
     </div>
-
-    <!-- slider section  -->
-    <!-- <div> -->
-      <!-- curve line  -->
-      <!-- <div class="flex items-center justify-center">
-        <svg width="1098" height="290" viewBox="0 0 1098 290" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 1C73 48.1667 245.8 136.3 361 111.5C505 80.5 582 40 711.5 68.5C841 97 975.5 286.5 1119.5 289" stroke="#F58420" stroke-opacity="0.12"/>
-        </svg>
-      </div> -->
-
-      <!-- carousel  -->
-      <!-- <div class="max-w-5xl mx-auto flex items-center justify-around relative"> -->
-        <!-- left arrow  -->
-        <!-- <div class="h-10 w-10 rounded-circle flex justify-center items-center p-2 absolute left-0" style="background-color: #FEF6ED;">
-          <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.265429 8.14454L6.68464 14.7393C6.85736 14.9088 7.08804 15.0024 7.3273 15C7.56656 14.9975 7.79539 14.8993 7.9648 14.7264C8.13421 14.5535 8.23075 14.3195 8.23375 14.0746C8.23674 13.8298 8.14596 13.5934 7.98083 13.4162L3.15613 8.46042L21.0284 8.46042C21.1532 8.46824 21.2781 8.44985 21.3956 8.40639C21.5131 8.36292 21.6207 8.29529 21.7117 8.20767C21.8027 8.12005 21.8753 8.01428 21.9248 7.89689C21.9744 7.7795 22 7.65296 22 7.52507C22 7.39718 21.9744 7.27065 21.9248 7.15326C21.8753 7.03586 21.8027 6.9301 21.7117 6.84248C21.6207 6.75486 21.5131 6.68723 21.3956 6.64376C21.2781 6.60029 21.1532 6.58191 21.0284 6.58973L3.08412 6.58973L7.9774 1.63748C8.07049 1.55279 8.14572 1.44954 8.19849 1.33405C8.25125 1.21857 8.28043 1.09329 8.28425 0.965859C8.28808 0.838434 8.26646 0.71155 8.22072 0.592971C8.17498 0.474393 8.10608 0.366614 8.01824 0.276229C7.9304 0.185844 7.82546 0.114755 7.70986 0.067311C7.59425 0.0198657 7.4704 -0.00293573 7.34588 0.000301034C7.22137 0.00353779 7.09881 0.0327441 6.9857 0.0861336C6.87259 0.139523 6.77132 0.215972 6.68807 0.310803L0.268859 6.81786C0.183633 6.9049 0.116017 7.0083 0.0698821 7.12212C0.0237491 7.23595 6.68087e-07 7.35797 6.57314e-07 7.4812C6.46541e-07 7.60443 0.023749 7.72645 0.0698821 7.84028C0.116017 7.9541 0.183633 8.0575 0.268859 8.14454L0.265429 8.14454Z" fill="#333333" fill-opacity="0.56"/>
-            </svg>
-        </div> -->
-
-        <!-- carousel 1  -->
-        <!-- <div *ngIf="slider1" class="flex justify-center gap-x-20" @slideInOut> -->
-          <!-- icon  -->
-          <!-- <div class="h-36 w-36 rounded-full flex justify-center" style="background-color: #DCFFEA;">
-            <svg width="84" height="116" viewBox="0 0 84 116" class="relative bottom-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24.6338 0H59.5352V20.7746H24.6338V0Z" fill="#4CCC81"/>
-              <path d="M66.3213 10.8028V28.2531H17.8481L17.847 10.8028H0.535156V115.507H83.6338V10.8028H66.3213ZM66.3213 98.0573H17.8452C15.9335 98.0573 14.3835 96.4938 14.3835 94.5668C14.3835 92.6398 15.9335 91.0762 17.8452 91.0762H66.3213C68.233 91.0762 69.783 92.6398 69.783 94.5668C69.783 96.4938 68.233 98.0573 66.3213 98.0573V98.0573ZM66.3213 77.1165H17.8452C15.9335 77.1165 14.3835 75.5529 14.3835 73.6259C14.3835 71.699 15.9335 70.1354 17.8452 70.1354H66.3213C68.233 70.1354 69.783 71.699 69.783 73.6259C69.783 75.5529 68.233 77.1165 66.3213 77.1165V77.1165ZM66.3213 56.1756H17.8452C15.9335 56.1756 14.3835 54.6121 14.3835 52.6851C14.3835 50.7581 15.9335 49.1945 17.8452 49.1945H66.3213C68.233 49.1945 69.783 50.7581 69.783 52.6851C69.783 54.6121 68.233 56.1756 66.3213 56.1756V56.1756Z" fill="#4CCC81"/>
-            </svg>
-          </div> -->
-          <!-- content  -->
-          <!-- <div class="w-1/2 ml-5">
-            <div class="text-2xl font-light -mt-36 mb-5">NO COLLATERAL</div>
-            <div class="font-semibold mb-10" style="color: #636061; font-size: 2.8125rem; line-height: 3.4375rem;">We offer loan to you. No signing, no guarantor; upto 10million</div>
-            <a href="https://apply.creditalert.africa" class="bg-princeps px-10 py-2 text-2xl font-semibold text-white rounded-xl">Apply</a>
-          </div> -->
-        <!-- </div> -->
-
-        <!-- carousel 2  -->
-
-
-        <!-- right arrow  -->
-        <!-- <div class="h-10 w-10 rounded-circle flex justify-center items-center p-2 absolute right-0" style="background-color: #FEF6ED;">
-          <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21.7346 6.85546L15.3154 0.260656C15.1426 0.0911726 14.912 -0.0023722 14.6727 4.5733e-05C14.4334 0.00246367 14.2046 0.100652 14.0352 0.273593C13.8658 0.446534 13.7692 0.680485 13.7663 0.925366C13.7633 1.17025 13.854 1.4066 14.0192 1.58383L18.8439 6.53958H0.971566C0.84685 6.53176 0.721889 6.55015 0.604377 6.59361C0.486866 6.63708 0.37929 6.70471 0.288275 6.79233C0.197259 6.87995 0.12473 6.98572 0.0751532 7.10311C0.025576 7.2205 0 7.34704 0 7.47493C0 7.60282 0.025576 7.72935 0.0751532 7.84674C0.12473 7.96414 0.197259 8.0699 0.288275 8.15752C0.37929 8.24514 0.486866 8.31277 0.604377 8.35624C0.721889 8.39971 0.84685 8.41809 0.971566 8.41027H18.9159L14.0226 13.3625C13.9295 13.4472 13.8543 13.5505 13.8015 13.6659C13.7488 13.7814 13.7196 13.9067 13.7157 14.0341C13.7119 14.1616 13.7335 14.2884 13.7793 14.407C13.825 14.5256 13.8939 14.6334 13.9818 14.7238C14.0696 14.8142 14.1745 14.8852 14.2901 14.9327C14.4058 14.9801 14.5296 15.0029 14.6541 14.9997C14.7786 14.9965 14.9012 14.9673 15.0143 14.9139C15.1274 14.8605 15.2287 14.784 15.3119 14.6892L21.7311 8.18214C21.8164 8.09509 21.884 7.9917 21.9301 7.87787C21.9763 7.76405 22 7.64203 22 7.5188C22 7.39557 21.9763 7.27355 21.9301 7.15972C21.884 7.0459 21.8164 6.9425 21.7311 6.85546H21.7346Z" fill="#333333" fill-opacity="0.56"/>
-          </svg>
-        </div> -->
-      <!-- </div>
-    </div> -->
-
-    <!-- how it works  video -->
-    <div id="howitworks" class="md:px-40 md:mt-40 text-center md:text-left">
-      <!-- title  -->
-      <div class="text-center md:text-5xl text-3xl text-princeps font-semibold md:mr-16 mb-5">How it works</div>
-      <!-- body  -->
-      <div class="text-center md:mr-16 md:text-2xl opacity-50" style="color: #201B1B;">Tap on the play button to watch how to get your Credit Alert Loan</div>
-
-      <!-- video  -->
-      <div class="rounded-xl hidden md:block mx-auto my-10" style="height: 28.5625rem; width: 58.5625rem; background-color: #FEF6ED;">
-        <!-- <iframe width="100%" height="100%"
-        src="https://www.youtube.com/watch?v=8G37Iaw8mMQ">
-        </iframe> -->
-
-
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8G37Iaw8mMQ" title="How to?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-
-      <!-- video mobile  -->
-      <div class="rounded-xl md:hidden mx-auto my-10 px-5 bg-white" style="height: 15rem;">
-        <!-- <iframe width="100%" height="100%"
-        src="https://www.youtube.com/watch?v=8G37Iaw8mMQ">
-        </iframe> -->
-
-
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8G37Iaw8mMQ" title="How to?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <!-- curve line  -->
-    <div class="">
-      <svg width="100%" height="290" viewBox="0 0 1098 290" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 1C73 48.1667 245.8 136.3 361 111.5C505 80.5 582 40 711.5 68.5C841 97 975.5 286.5 1119.5 289" stroke="#F58420" stroke-opacity="0.12"/>
-      </svg>
-    </div>
-
   </div>
 
+    <!-- how it works  video -->
+    <section id="howitworks">
+      <div class="md:px-40 md:mt-20 pb-10 md:pb-20 mb-20 text-center md:text-left">
+        <!-- title  -->
+        <div class="text-center md:text-5xl text-2xl text-princeps font-semibold md:mr-16 mb-5">How it works</div>
+        <!-- body  -->
+        <div class="text-center px-5 md:px-0 md:mr-16 md:text-2xl opacity-50" style="color: #201B1B;">Tap on the play button to watch how to get your Credit Alert Loan</div>
+
+        <!-- video  -->
+        <div class="rounded-xl hidden md:block mx-auto my-10" style="height: 28.5625rem; width: 58.5625rem; background-color: #FEF6ED;">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8G37Iaw8mMQ" title="How to?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- video mobile  -->
+        <div class="rounded-xl md:hidden mx-auto my-10 px-5 bg-white" style="height: 15rem;">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8G37Iaw8mMQ" title="How to?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- curve line  -->
+    <!-- <div class="">
+      <svg width="100vw" height="190" viewBox="0 0 1098 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1C73 48.1667 245.8 136.3 361 111.5C505 80.5 582 40 711.5 68.5C841 97 975.5 286.5 1119.5 289" stroke="#F58420" stroke-opacity="0.5"/>
+      </svg>
+    </div> -->
+
+
   <!-- section 2  -->
-  <div class="w-full md:flex justify-center mb-48 md:space-x-12" style="background-color: #FEF6ED;">
-    <div class="-mt-24 md:ml-32">
-      <img src="../../../assets/iPhone.png" class="md:block hidden" alt="">
-      <img src="../../../assets/iPhone.png" class="w-48 md:hidden mx-auto" alt="">
+  <div class="mt-20 md:mt-0 flex justify-center mb-48 md:space-x-12 space-x-0 relative md:h-full h-40" style="background-color: #FEF6ED;">
+    <!-- web  -->
+    <div class="md:-mt-24 md:ml-32 md:block hidden">
+      <img src="../../../assets/iPhone.png" class="" alt="">
     </div>
 
-    <div class="md:p-20 text-center md:text-left">
-      <div class="md:text-lg text-md font-light opacity-50" style="line-height: 1.4375rem;">CREDIT ALERT MOBILE APP</div>
-      <div class="md:w-2/3 font-semibold md:text-6xl text-2xl" style="color: #636061;">you are a Click away to</div>
-      <div class="mt-5 flex justify-center md:justify-start space-x-5">
+    <!-- mobile  -->
+    <div class="md:hidden -mt-10">
+      <img src="../../../assets/iPhone.png" class="w-full" alt="">
+    </div>
+
+    <div class="md:p-20 px-5 pt-3">
+      <div class="md:text-lg text-xxs font-light opacity-50" style="line-height: 1.4375rem;">CREDIT ALERT MOBILE APP</div>
+      <div class="md:w-2/3 font-semibold md:text-6xl text-xl leading-6" style="color: #636061;">you are a Click away to <br>your next loan</div>
+      <div class="md:mt-5 flex justify-center md:justify-start space-x-5">
         <a href="#">
-          <svg id="Group_277" data-name="Group 277" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="50" viewBox="0 0 248.172 81.18">
+          <svg id="Group_277" class="w-20 md:w-40" data-name="Group 277" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="50" viewBox="0 0 248.172 81.18">
             <defs>
               <clipPath id="clip-path">
                 <path id="Path_1304" data-name="Path 1304" d="M170.173,349.3l-11.19-6.461L137.4,330.373c-1.2-.692-2.392-.273-2.392,1.173v50.777c0,1.084.853,1.551,1.895.951l22.082-12.751,11.19-6.46,10.756-6.209c1.262-.729,1.141-1.729.076-2.3S170.173,349.3,170.173,349.3Z" transform="translate(-135.006 -330.047)" fill="none"/>
@@ -492,7 +437,7 @@
         </a>
 
         <a href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 248.175 81.18">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-20 md:w-40" width="150" height="50" viewBox="0 0 248.175 81.18">
             <g id="Group_271" data-name="Group 271" transform="translate(0 0)">
               <path id="Path_1275" data-name="Path 1275" d="M344.816,1006.034a10.97,10.97,0,0,1-10.968,10.971H107.612a10.972,10.972,0,0,1-10.971-10.971V946.8a10.972,10.972,0,0,1,10.971-10.97H333.848a10.97,10.97,0,0,1,10.968,10.97Z" transform="translate(-96.641 -935.825)"/>
               <g id="Group_267" data-name="Group 267" transform="translate(16.648 12.62)">
@@ -531,11 +476,8 @@
             </g>
           </svg>
         </a>
-
       </div>
     </div>
-
-
   </div>
 
   <footer class="md:mt-12 mt-8">
@@ -543,7 +485,7 @@
     <div class="w-full h-12 flex px-5 py-10 justify-center items-center md:space-x-10 space-x-5" style="background-color:#FEF6ED;">
       <div class="opacity-30 md:text-3xl">Need help? Speak with us</div>
       <div>
-        <a class="bg-princeps md:px-10 md:py-2 px-3 py-1 flex items-center justify-between md:space-x-3 text-white rounded-xl" href="tel:07085698828"> <svg width="21" height="20" class="hidden md:inline-flex" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="bg-princeps md:px-10 space-x-2 px-3 py-2 flex items-center justify-between md:space-x-3 text-white rounded-md" href="tel:07085698828"> <svg width="21" height="20" class="hidden md:inline-flex" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M18.5876 8.36517V7.74953C18.5876 3.48198 14.9586 0 10.5109 0C6.06317 0 2.43417 3.48198 2.43417 7.74953V8.36517C1.01797 8.87476 0 10.1911 0 11.7198C0 13.6942 1.68169 15.3079 3.73968 15.3079H5.08949C5.44358 15.3079 5.73113 15.0319 5.73113 14.6923V8.74745C5.73113 8.40771 5.44341 8.13181 5.08949 8.13181H4.46991V7.74972C4.46991 4.54379 7.16953 1.9535 10.5109 1.9535C13.8522 1.9535 16.5518 4.54375 16.5518 7.74972V8.13181H15.9322C15.5782 8.13181 15.2906 8.40787 15.2906 8.74745V14.6923C15.2906 15.032 15.5783 15.3079 15.9322 15.3079H16.2199C15.5783 16.7304 14.1621 17.7283 12.4803 17.8557C12.3918 17.4522 12.0155 17.1339 11.5509 17.1339H9.44876C8.91765 17.1339 8.49734 17.5373 8.49734 18.0467V19.0871C8.49734 19.5967 8.91781 20 9.44876 20H11.5509C12.0157 20 12.4139 19.6816 12.4803 19.2357C14.9808 19.1083 17.0608 17.4734 17.7689 15.2654C19.5835 15.0318 20.9996 13.5243 20.9996 11.7197C21.0217 10.17 20.0038 8.87484 18.5876 8.36521L18.5876 8.36517Z" fill="white"/>
         </svg>
 
@@ -562,17 +504,17 @@
         <div>
           <img src="../../../assets/logo_white.png" alt="">
         </div>
-        <div class="text-lg font-semibold">
+        <div class="text-lg md:font-semibold font-light">
           23, Opebi Road, <br> Pentagon Plaza, Ikeja. <br> Lagos, Nigeria.
         </div>
-        <div class="text-xl font-semibold">
+        <div class="text-xl md:font-semibold font-light">
          <a href="mailto:support@creditwallet.ng">support@creditwallet.ng</a>  <br> <a href="tel:07085698828">07085698828</a> , <a href="tel:07001235529">07001235529</a>
         </div>
       </div>
 
 
       <!-- right  -->
-      <div class="text-lg font-semibold mt-32">
+      <div class="text-lg md:font-semibold font-light mt-32">
         <div class="mb-7">Terms and Conditions </div>
         <div>Credit Wallet Copyright © 2020. All Rights Reserved.</div>
       </div>
