@@ -1,0 +1,232 @@
+<div id="main">
+  <div id="header" class="md:min-h-350px md:mb-0">
+    <div class="w-full relative md:px-20 md:pt-12 px-5 pt-12 max-w-screen-2xl mx-auto" >
+      <div class="absolute bottom-10 left-2 -z-1">
+        <!-- <img src="../../../assets/bg.png" alt=""> -->
+      </div>
+      <svg width="912" class="absolute top-0 right-0" height="290" viewBox="0 0 912 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1C73 48.1667 245.8 136.3 361 111.5C505 80.5 582 40 711.5 68.5C841 97 975.5 286.5 1119.5 289" stroke="#F58420" stroke-opacity="0.14"/>
+      </svg>
+
+      <!-- navbar  -->
+      <nav class="flex justify-between md:px-10 relative z-20 items-center"
+      >
+        <!-- logo  -->
+        <div class="hidden md:block">
+          <a routerLink=""><img src="../../../assets/mainlogo.png" alt=""></a>
+        </div>
+
+        <!-- mobile logo  -->
+        <div class="md:hidden mb-10" [class.fixed] = "mobileNav == true">
+          <a routerLink=""><img src="../../../assets/mainlogo.png" class="w-32" alt=""></a>
+        </div>
+
+        <!-- hambuger  -->
+        <div  class="md:hidden mb-10 right-5" [class.fixed] = "mobileNav == true" >
+          <button type="button" (click)="toggleMobileNav()">
+            <svg *ngIf="!mobileNav" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg *ngIf="mobileNav" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+            <!-- navbar mobile  -->
+          <ul class="md:hidden space-y-5 p-5 mt-5 fixed  left-0 right-0 min-h-screen bg-white transform translate-x-full transition-all duration-200" [class.translate-x-0] = "mobileNav == true">
+            <li><a style="color: #636061;" class="text-lg font-normal" (click)="toggleMobileNav()" href="#howitworks">How It Works</a></li>
+            <li><a class="text-princeps text-lg font-semibold" href="https://accounts.creditalert.africa">Log In</a></li>
+            <li><a href="https://apply.creditalert.africa" class="bg-princeps px-10 py-2 rounded-lg text-white text-lg">Apply</a></li>
+          </ul>
+        </div>
+
+        <!-- navbar web  -->
+        <ul class="md:flex hidden space-x-10">
+          <li><a style="color: #636061;" class="text-lg font-normal" href="#howitworks">How It Works</a></li>
+          <li><a class="text-princeps text-lg font-semibold" href="https://accounts.creditalert.africa">Log In</a></li>
+          <li><a href="https://apply.creditalert.africa" class="bg-princeps px-10 py-2 rounded-lg text-white text-lg">Apply</a></li>
+        </ul>
+
+      </nav>
+
+      <!-- hero  -->
+      <section id="hero" class="md:my-24 py-10 md:py-0">
+        <div class="text-center font-bold md:h-full md:my-36 my-0 md:flex justify-center items-center">
+          <h1 class="md:text-6xl text-2xl text-princeps">Credit Alert Privacy Policy</h1>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+
+  <section id="privacy-main" class="w-full relative md:px-20 md:pt-12 px-5 pt-4 max-w-screen-2xl mx-auto md:text-xl text-sm md:leading-8 leading-6 privacy-color">
+
+    <p class="md:my-10">CreditAlert™ is a trademark of Princeps Credit Systems Limited (“PSCL”). As the data collector, PSCL ("we" “us” “our”) are committed to protecting and respecting your privacy. This policy sets out the basis on which any personal data we collect from you, or that you provide to us, will be processed by us. Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it. By visiting "https://creditalert.africa" or using CreditAlert mobile application hosted on the Google Play Store or Apple Play Store (collectively “our site”) you are accepting and consenting to the practices described in this policy. Please note that by clicking the “Connect with Facebook” button you are agreeing that Facebook may share personal data held by them with us. The collection and processing of your personal data is in accordance with the National Information Technology Development Agency Act 2007 (the “Act”), Nigeria Data Protection Regulation 2019 (the “Regulations”) and the provisions and prescriptions of Section 5; Part 1 and Part 2 of National Information Systems and Network Security Standards and Guidelines</p>
+
+    <h2 class="privacy-heading">Information we may collect from you</h2>
+    <p class="my-5">We may collect and process the following data about you:</p>
+
+    <h2 class="privacy-semi-heading">1 . Information you give us:</h2>
+      <p class="my-5">You may give us information about you by filling in forms on our site https://creditalert.africa and by allowing us to access your information on social media sites (including but not limited to Facebook, Twitter and LinkedIn) or by corresponding with us by phone, e-mail or otherwise. This includes information you provide when you register to use our site, apply for a loan, search for a feature (for example but not limited to, loan amounts, currency, loan duration), your activity levels on boards or other social media functions on the applicable social media sites, the applications you use on social media sites, and when you report a problem with our site. The information you give us may include your name, address, e-mail address and phone number, login information for social networking sites, financial and credit card information, personal description, current and former places of employment, education, names of colleagues, contacts and friends, photographs, and lists of family members.
+      </p>
+
+    <h2 class="privacy-semi-heading">2 . Information we collect about you:</h2>
+    <p class="my-5">With regard to each of your visits to our site we may automatically collect the following information:</p>
+    <p class="my-5">i. Technical information, including the Internet protocol (IP) address used to connect your computer to the Internet, your login information, browser type and version, time zone setting, browser plug-in types and versions, operating system and platform;</p>
+    <p class="my-5">ii. Information about your visit, including the full Uniform Resource Locators (URL) clickstream to, through and from our site (including date and time); products you viewed or searched for; page response times, download errors, length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs), and methods used to browse away from the page and any phone number used to call our customer service number.;</p>
+    <p class="my-5">iii. Anonymized repayment data.</p>
+
+
+    <h2 class="privacy-semi-heading">3 . Information we receive from others:</h2>
+    <p class="my-5">
+      We may receive information about you if you use any of the other websites we operate, the other services we provide and/or the social media sites which you login to via our site. We are also working closely with third parties (including, for example, business partners, sub-contractors in technical, payment and delivery services, social media sites, advertising networks, analytics providers, search information providers, credit bureaus, and financial services and credit providers) and may receive information about you from them.
+    </p>
+
+    <h2 class="privacy-heading">Cookies</h2>
+    <p class="my-5">Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. By visiting our website, you consent to the placement of cookies and beacons in your browser and HTML-based emails in accordance with this Privacy Policy.</p>
+
+    <h2 class="privacy-heading">Uses made of the information</h2>
+    <p class="my-5">We use information held about you in the following ways:</p>
+
+    <h2 class="privacy-semi-heading">1 . Information you give us:</h2>
+    <p class="my-5">We will use your information in the following ways and in each case, we note the lawful basis under the Nigerian Data Protection Regulations which we rely on to use your information:</p>
+
+      <p class="my-5">a. To determine whether to provide a loan to you, the amount of such loan and the terms and conditions applicable to such loan or for the provision of any of our product and services to you.
+      Lawful basis- Contract performance, consent, legal obligation </p>
+
+      <p class="my-5">b. To investigate or resolve any complaint and issues you may have.
+        Lawful basis- Contract performance, consent</p>
+
+      <p class="my-5">c. To exercise our rights under contracts we have entered into with you like recovering any payments due to us and where necessary to enforcing recovery through debt collection agencies or taking other legal action, including instituting an action in the courts of law.<br>
+      Lawful basis- Contract performance</p>
+
+      <p class="my-5">d. To fulfil our legal, compliance, regulatory and risk management obligations.<br>
+        Lawful basis- Legal obligation</p>
+
+      <p class="my-5">e. To establish a credit rating based on your information and provide that rating to third parties who may be interested in offering you financial products and services and this information is provided only to third parties selected by you or where you have agreed that we may share your score and information with;<br>
+        Lawful basis: Consent</p>
+
+      <p class="my-5">f. To provide you with information about other goods and services we offer that are similar to those that you have already purchased or enquired about; anonymized repayment data.<br>
+        Lawful basis: Consent</p>
+
+      <p class="my-5">g. For marketing and business development purposes subject to the marketing preferences you have selected on our website, to provide you, or permit selected third parties to provide you, with information about goods or services we feel may interest you.;<br>
+        Lawful basis: Consent</p>
+
+      <p class="my-5">To notify you about changes to our standard terms of service or to our business;<br>
+        Lawful basis- Contract performance</p>
+
+      <p class="my-5">i. To ensure that content from our site is presented in the most effective manner for you and for your device.<br>
+      Lawful basis- Contract performance
+      </p>
+
+
+      <h2 class="privacy-semi-heading">2 . Information we collect about you:</h2>
+      <p class="my-5">We will use this information:</p>
+
+      <p class="my-5">a. We collect this information to establish a credit rating for you.</p>
+
+      <p class="my-5">b. We may combine this information with information you give to us. We may use this information and the combined information for the purposes set out above (depending on the types of information we receive).</p>
+
+      <p class="my-5">c. We may carry out a further processing of your data for archiving purposes in the public interest, scientific or historical research purposes or statistical purposes.</p>
+
+      <h2 class="privacy-semi-heading">3 . Information collected when you use our services</h2>
+
+      <p class="my-5">a. When you use our services, we collect location data which allows us to determine your precise or approximate location. This information is collected during the loan application process, and we use this data to enhance our credit risk and underwriting framework, as well as to prevent fraud.</p>
+
+      <p class="my-5">b. We collect this information through your mobile device operating system, by requesting your express consent to your device’s permissions on the App. The collection of this information may take place in the background even when you aren’t using our service, if the permission you gave us expressly permits such collection.</p>
+
+      <h2 class="privacy-heading">Disclosure of your information</h2>
+      <p class="my-5">We may share your personal information with any member of our group, which means our subsidiaries, our ultimate holding company and its subsidiaries. We may share your information with selected third parties including:</p>
+
+      <p class="my-5">i. Business partners, suppliers and subcontractors for the performance of any contract we enter into with them or you.</p>
+
+
+      <p class="my-5">ii. Advertisers and advertising networks that require the data to select and serve relevant adverts to you and others. We do not disclose information about identifiable individuals to our advertisers, but we may provide them with aggregate information about our users (for example, we may inform them that 500 men aged under 30 have clicked on their advertisement on any given day). We may also use such aggregate information to help advertisers reach the kind of audience they want to target (for example, women in Lagos State). We may make use of the personal data we have collected from you to enable us to comply with our advertisers’ wishes by displaying their advertisement to that target audience.</p>
+
+
+      <p class="my-5">iii. Analytics and search engine providers that assist us in the improvement and optimization of our site. We may disclose your personal information to third parties: a) In the event that we sell or buy any business or assets, in which case we may disclose your personal data to the prospective seller or buyer of such business or assets. b) If PSCL or substantially all of its assets are acquired by a third party, in which case personal data held by it about its customers will be one of the transferred assets.</p>
+
+
+      <p class="my-5">iv. if we are under a duty to disclose or share your personal data in order to comply with any legal obligation, or in order to enforce or apply our terms of use and other agreements or to protect the rights, property, or safety of PSCL, our customers, or others. This includes exchanging information with other companies and organizations for the purposes of fraud protection and credit risk reduction.</p>
+
+      <h2 class="privacy-heading">International data transfers</h2>
+      <p class="my-5">Information that we collect may be stored, processed in, and transferred between any of the countries in which we operate, in order to enable us to use the information in accordance with this policy. Any such information transferred to other countries shall be in compliance with the Act and the Regulations.</p>
+
+      <h2 class="privacy-heading">Consent</h2>
+      <p class="my-5">By ticking the “I agree to the Terms and Conditions”, which you hereby adopt as your electronic signature, you consent and agree that:</p>
+
+      <p class="my-5">1. We can provide materials and other information about your legal rights and duties to you electronically.</p>
+
+      <p class="my-5">2. We are authorised to share, receive and use data/information collected from your transaction with other affiliated third parties including but not limited to switching companies, mobile network operators, electricity companies, aggregators, credit bureaus, other financial institutions, e-commerce platforms etc.</p>
+
+      <h2 class="privacy-heading">Where we store your personal data</h2>
+      <p class="my-5">The data that we collect from you is stored on our secure servers using JWT. Where we have given you (or where you have chosen) a password which enables you to access certain parts of our site, you are responsible for keeping this password confidential. We ask you not to share a password with anyone. Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorized access.</p>
+
+      <h2 class="privacy-heading">Retention</h2>
+      <p class="my-5">Unless a longer retention period is required or permitted by law, we will only hold your data on our systems for the period necessary to fulfil the purposes outlined in this privacy policy.</p>
+
+      <p class="my-5">Even if we delete your data, it may persist on backup or archival media for legal, tax or regulatory purposes.</p>
+
+      <h2 class="privacy-heading">Rights</h2>
+      <p class="my-5">have the right to ask us not to process your personal data for marketing purposes and to withdraw your consent at any time. Please note that the withdrawal of your consent will not affect the lawful processing of data which we have obtained based on your previous consent. We will usually inform you (before collecting your data) if we intend to use your data for the aforementioned purposes or if we intend to disclose your information to any third party for such purposes. You can exercise your right to prevent such processing by checking certain boxes on the forms we use to collect your data. You can also exercise the right at any time by contacting us using in-app support feature on the mobile application or using the complaint tab on the web portal at portal.getcarbon.co. Our site may, from time to time, contain links to and from the websites of our partner networks, advertisers and affiliates. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for these policies. Please check these policies before you submit any personal data to these websites.</p>
+
+      <h2 class="privacy-heading">Remedies</h2>
+      <p class="my-5">Each of the parties will be entitled to enforce its rights in the event of a breach of the terms of this privacy policy, to recover damages caused by any breach of the provisions herein and to exercise all other rights existing under law. Any claim or dispute arising in relation to this privacy policy shall be subject to the jurisdiction of the courts of the Federal Republic of Nigeria. We shall not be liable for any breach where a claim in respect of such breach is not brought within one month of the date that such breach arose.</p>
+
+      <h2 class="privacy-heading">Limitation of liability</h2>
+      <p class="my-5">Notwithstanding any other provision in this privacy policy, neither PSCL, its affiliates, officers, directors, employees, attorneys or agents shall have any liability with respect to, and you hereby waive, release and agree not to sue any of them upon, any claim for any special, indirect, incidental, consequential damages suffered or incurred by you in connection with, arising out of, or in any way related to, a breach of this privacy policy.</p>
+
+      <h2 class="privacy-heading">Access to information</h2>
+      <p class="my-5">The Act gives you the right to access information held about you. Your right of access can be exercised in accordance with the Act. Any access request may be subject to a fee in providing you with details of the information we hold about you.</p>
+
+      <p class="my-5">We may update this policy from time to time by publishing a new version on our website. You should check this page occasionally to ensure you understand any changes to this policy.</p>
+
+      <h2 class="privacy-heading">Contact</h2>
+      <p class="my-5">Questions, comments and requests regarding this privacy policy are welcomed and should be sent as an email to <a class="text-princeps" href="mailto:support@creditalert.africa">support@creditalert.africa</a> </p>
+
+
+  </section>
+
+  <footer class="md:mt-24 mt-8">
+    <!-- top  -->
+    <div class="w-full h-12 flex px-5 py-10 justify-center items-center md:space-x-10 space-x-5" style="background-color:#FEF6ED;">
+      <div class="opacity-30 md:text-3xl">Need help? Speak with us</div>
+      <div>
+        <a class="bg-princeps md:px-10 space-x-2 px-3 py-2 flex items-center justify-between md:space-x-3 text-white rounded-md" href="tel:07085698828"> <svg width="21" height="20" class="hidden md:inline-flex" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.5876 8.36517V7.74953C18.5876 3.48198 14.9586 0 10.5109 0C6.06317 0 2.43417 3.48198 2.43417 7.74953V8.36517C1.01797 8.87476 0 10.1911 0 11.7198C0 13.6942 1.68169 15.3079 3.73968 15.3079H5.08949C5.44358 15.3079 5.73113 15.0319 5.73113 14.6923V8.74745C5.73113 8.40771 5.44341 8.13181 5.08949 8.13181H4.46991V7.74972C4.46991 4.54379 7.16953 1.9535 10.5109 1.9535C13.8522 1.9535 16.5518 4.54375 16.5518 7.74972V8.13181H15.9322C15.5782 8.13181 15.2906 8.40787 15.2906 8.74745V14.6923C15.2906 15.032 15.5783 15.3079 15.9322 15.3079H16.2199C15.5783 16.7304 14.1621 17.7283 12.4803 17.8557C12.3918 17.4522 12.0155 17.1339 11.5509 17.1339H9.44876C8.91765 17.1339 8.49734 17.5373 8.49734 18.0467V19.0871C8.49734 19.5967 8.91781 20 9.44876 20H11.5509C12.0157 20 12.4139 19.6816 12.4803 19.2357C14.9808 19.1083 17.0608 17.4734 17.7689 15.2654C19.5835 15.0318 20.9996 13.5243 20.9996 11.7197C21.0217 10.17 20.0038 8.87484 18.5876 8.36521L18.5876 8.36517Z" fill="white"/>
+        </svg>
+
+        <svg width="15" height="15" class="inline-flex md:hidden" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.5876 8.36517V7.74953C18.5876 3.48198 14.9586 0 10.5109 0C6.06317 0 2.43417 3.48198 2.43417 7.74953V8.36517C1.01797 8.87476 0 10.1911 0 11.7198C0 13.6942 1.68169 15.3079 3.73968 15.3079H5.08949C5.44358 15.3079 5.73113 15.0319 5.73113 14.6923V8.74745C5.73113 8.40771 5.44341 8.13181 5.08949 8.13181H4.46991V7.74972C4.46991 4.54379 7.16953 1.9535 10.5109 1.9535C13.8522 1.9535 16.5518 4.54375 16.5518 7.74972V8.13181H15.9322C15.5782 8.13181 15.2906 8.40787 15.2906 8.74745V14.6923C15.2906 15.032 15.5783 15.3079 15.9322 15.3079H16.2199C15.5783 16.7304 14.1621 17.7283 12.4803 17.8557C12.3918 17.4522 12.0155 17.1339 11.5509 17.1339H9.44876C8.91765 17.1339 8.49734 17.5373 8.49734 18.0467V19.0871C8.49734 19.5967 8.91781 20 9.44876 20H11.5509C12.0157 20 12.4139 19.6816 12.4803 19.2357C14.9808 19.1083 17.0608 17.4734 17.7689 15.2654C19.5835 15.0318 20.9996 13.5243 20.9996 11.7197C21.0217 10.17 20.0038 8.87484 18.5876 8.36521L18.5876 8.36517Z" fill="white"/>
+        </svg>
+
+          <div class="md:text-2xl text-xs font-semibold">Support</div> </a>
+      </div>
+    </div>
+
+    <!-- main-footer  -->
+    <div class="w-full bg-princeps md:py-20 py-10 px-5 md:px-0 text-white md:flex justify-center items-center md:space-x-40 md:h-72">
+      <!-- left  -->
+      <div class="flex flex-col space-y-5">
+        <div>
+          <img src="../../../assets/logo_white.png" alt="">
+        </div>
+        <div class="text-lg md:font-semibold font-light">
+          23, Opebi Road, <br> Pentagon Plaza, Ikeja. <br> Lagos, Nigeria.
+        </div>
+        <div class="text-xl md:font-semibold font-light">
+         <a href="mailto:support@creditwallet.ng">support@creditwallet.ng</a>  <br> <a href="tel:07085698828">07085698828</a> , <a href="tel:07001235529">07001235529</a>
+        </div>
+      </div>
+
+
+      <!-- right  -->
+      <div class="text-lg md:font-semibold font-light mt-32">
+        <div class="mb-7"> <a routerLink="privacy-policy">Privacy Policy</a></div>
+        <div>Credit Wallet Copyright © 2020. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
