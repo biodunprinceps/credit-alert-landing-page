@@ -43,24 +43,34 @@ export class IndexComponent implements OnInit {
     this.loan_amount = 700000;
     this.options = {...this.options, ceil: this.loan_amount};
     this.profit = 0.15 * parseInt(this.loan_amount);
-    this.repayment_amount = this.profit + parseInt(this.loan_amount);
     let today = new Date();
-    if (today.getDate() < 15){
+    if (today.getDate() <= 15){
       let month = today.getMonth();
       let year = today.getFullYear();
-      let newDate = new Date(year,month,15).toDateString();
+      let newDate = new Date(year, month + 1, 0).toDateString();
+      // let newDate = new Date(year,month,15).toDateString();
       this.repayment_date = newDate;
     }else{
+
+      this.profit = 0.25 * parseInt(this.loan_amount);
+      console.log(this.profit);
       let month = today.getMonth() + 1;
       let year = today.getFullYear();
-      let newDate = new Date(year,month,15).toDateString();
+      // let newDate = new Date(year,month,15).toDateString();
+      let newDate = new Date(year, month + 1, 0).toDateString();
       this.repayment_date = newDate;
     }
+    this.repayment_amount = this.profit + parseInt(this.loan_amount);
   }
 
 
   reCalcRepayment(evt:ChangeContext): void {
+    let today = new Date();
     this.profit = 0.15 * parseInt(this.loan_amount);
+    if(today.getDate() > 15){
+      this.profit = 0.25 * parseInt(this.loan_amount);
+    }
+
     this.repayment_amount = this.profit + evt.value
     console.log(evt.value,this.profit);
   }
